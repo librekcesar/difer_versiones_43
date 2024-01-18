@@ -72,7 +72,11 @@ s
 };
 
 var anterior = new L.geoJson(ver42, {
- style: stylePolygon
+ style: stylePolygon,
+ onEachFeature: function (feature, layer) {
+      // Configurar pop-ups aquí
+      layer.bindPopup("Zonificación ver43: " + feature.properties.zonificacion);
+    }
 }).addTo(map);
 
 ///////////////////////
@@ -94,7 +98,11 @@ var anterior = new L.geoJson(ver42, {
 };
 
 var calibra = new L.geoJson(ver43, {
- style: stylePolygon2
+ style: stylePolygon2,
+ onEachFeature: function (feature, layer) {
+      // Configurar pop-ups aquí
+      layer.bindPopup("Zonificación ver43: " + feature.properties.zonificacion);
+    }
 }).addTo(map);
 
 
